@@ -8,6 +8,8 @@ def steps(min, max, n):
     the to-be-interpolated variable (y)
     varies _more_than the number of steps (x)"""
 
+    assert max > min
+    assert n > 1
     deltay = max - min
     deltax = n - 1
     assert deltay >= deltax # Check that y varies more widely
