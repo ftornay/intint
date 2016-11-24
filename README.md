@@ -6,3 +6,4 @@ of the variable from the min to the max with intermediate levels that
 vary as closely to linear as possible
 It's implemented in python and the docstring and comments give more details
 about the algorithm and what it is based on
+A translation into matlab is also included in the rep

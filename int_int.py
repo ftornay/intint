@@ -15,7 +15,7 @@ def steps(min, max, n):
                 # to increment the other axis
     
     results = [min] # list to accumulate the values
-    x = min
+    x = 1
     for y in range(min, max+1): # y changes faster so iterate on it
         deltaerr += deltax
         if deltaerr >= deltay: # If enough increases in the variable (y steps)
