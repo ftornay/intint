@@ -6,10 +6,10 @@ function results = steps(min, max, n)
     results(1) = min;
     x = 1;
     for y = min:max
-        deltaerr += deltax;
+        deltaerr = deltaerr + deltax;
         if (deltaerr >= deltay)
             x += 1;
-            deltaerr -= deltay;
+            deltaerr = deltaerr - deltay;
             next_y = y + 1;
             results(x) = next_y;
         end
