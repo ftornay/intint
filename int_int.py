@@ -10,6 +10,7 @@ def steps(min, max, n):
 
     deltay = max - min
     deltax = n - 1
+    assert deltay >= deltax # Check that y varies more widely
     deltaerr = 0 # variable for figuring out when
                 # to increment the other axis
     
