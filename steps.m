@@ -10,7 +10,8 @@ function results = steps(min, max, n)
         if (deltaerr >= deltay)
             x += 1;
             deltaerr -= deltay;
-            results(x) = y + 1;
+            next_y = y + 1;
+            results(x) = next_y;
         end
     end
 end
