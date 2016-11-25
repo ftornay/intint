@@ -1,9 +1,9 @@
 function results = stepsx10(min, max, n)
-    results = steps(min*10, max*10, n);
+    results = stepsY(min*10, max*10, n);
     results = round(results/10);
 end
 
-function results = steps(min, max, n)
+function results = stepsY(min, max, n)
     deltay = max - min;
     deltax = n - 1;
     deltaerr = 0;

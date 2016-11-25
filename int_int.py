@@ -4,15 +4,19 @@ def steps(min, max, n):
     linearly between (min, max) in a number of steps (n)
     it uses the "integer line algorithm", simpler than Bresenham's
     The algorithm was taken from: http://www.pyaray.com/articles/lines.htm
-    This version assumes that
-    the to-be-interpolated variable (y)
-    varies _more_than the number of steps (x)"""
-
+    """
     assert max > min
     assert n > 1
     deltay = max - min
     deltax = n - 1
-    assert deltay >= deltax # Check that y varies more widely
+    if deltax >= deltay:
+        return stepsX(min, max, n) # Iterate over X (steps)
+    else:
+        return stepsY(min, max, n) # Iterate over Y (variable values)
+
+def stepsY(min, max, n):
+    deltay = max - min
+    deltax = n - 1
     deltaerr = 0 # variable for figuring out when
                 # to increment the other axis
     
@@ -30,6 +34,26 @@ def steps(min, max, n):
                                 # save the y level for it
     return results
 
+def stepsX(min, max, n):
+    deltay = max - min
+    deltax = n - 1
+    deltaerr = 0 # variable for figuring out when
+                # to increment the other axis
+    
+    results = [] # list to accumulate the values
+    y = min
+    for x in range(1, n+1):
+        results.append(y)
+        deltaerr += deltay
+        if deltaerr >= deltax: # If enough increases in the steps
+            y += 1              # then move to the next y value
+            deltaerr -= deltax # Reset deltaerr in deltax units
+                                # so that we keep the changes
+                                # proportional to deltay/deltax (the slope)
+    return results
+
 if __name__ == "__main__":
     l = steps(235, 273, 12)
+    print(l)
+    l = steps(23, 27, 12)
     print(l)
