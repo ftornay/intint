@@ -30,7 +30,7 @@ function results = stepsY(min, max, n)
     end
 end
 
-% Function that iterates over y
+% Function that iterates over x
 function results = stepsX(min, max, n)
     deltay = max - min;
     deltax = n - 1;
