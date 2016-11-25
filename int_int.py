@@ -2,8 +2,8 @@
 def steps(min, max, n):
     """ Function that interpolates values of a variable
     linearly between (min, max) in a number of steps (n)
-    it uses the "integer line algorithm", simpler than Bresenham's
-    The algorithm was taken from: http://www.pyaray.com/articles/lines.htm
+    it uses a variation of Bresenham's algorithm taken from:
+    http://www.pyaray.com/articles/lines.htm
     """
     assert max > min
     assert n > 1
@@ -16,7 +16,7 @@ def steps(min, max, n):
 
 def stepsY(min, max, n):
     """ Function that interpolates values _assuming_ that the variation
-    in the values is _larger_ than the numbers of steps
+    in the values is _larger_ than the number of steps
     See function steps for more details """
     deltay = max - min
     deltax = n - 1
@@ -39,7 +39,7 @@ def stepsY(min, max, n):
 
 def stepsX(min, max, n):
     """ Function that interpolates values _assuming_ that the variation
-    in the values is _smaller_ than the numbers of steps
+    in the values is _smaller_ than the number of steps
     See function steps for more details """
     deltay = max - min
     deltax = n - 1
@@ -48,7 +48,7 @@ def stepsX(min, max, n):
     
     results = [] # list to accumulate the values
     y = min
-    for x in range(1, n+1):
+    for x in range(1, n+1): # x changes faster so iterate on it
         results.append(y)
         deltaerr += deltay
         if deltaerr >= deltax: # If enough increases in the steps
