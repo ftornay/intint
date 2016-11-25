@@ -15,9 +15,9 @@ def steps(min, max, n):
         return stepsY(min, max, n) # Iterate over Y (variable values)
 
 def stepsY(min, max, n):
-""" Function that interpolates values _assuming_ that the variation
-in the values is _larger_ than the numbers of steps
-See function steps for more details """
+    """ Function that interpolates values _assuming_ that the variation
+    in the values is _larger_ than the numbers of steps
+    See function steps for more details """
     deltay = max - min
     deltax = n - 1
     deltaerr = 0 # variable for figuring out when
@@ -38,9 +38,9 @@ See function steps for more details """
     return results
 
 def stepsX(min, max, n):
-""" Function that interpolates values _assuming_ that the variation
-in the values is _smaller_ than the numbers of steps
-See function steps for more details """
+    """ Function that interpolates values _assuming_ that the variation
+    in the values is _smaller_ than the numbers of steps
+    See function steps for more details """
     deltay = max - min
     deltax = n - 1
     deltaerr = 0 # variable for figuring out when
